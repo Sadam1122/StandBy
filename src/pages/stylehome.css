@@ -1,0 +1,141 @@
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Top bar styles */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.icon img {
+  height: 40px;
+  width: 40px; /* Tambahkan lebar */
+  background-size: cover;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+}
+
+.navigation li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.navigation li a {
+  color: #ffa200;
+}
+
+
+/* Content styles */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-column, .right-column {
+  flex-basis: calc(50% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-column {
+  order: 1; /* Update order */
+}
+
+.right-column {
+  order: 2; /* Update order */
+}
+
+/* Sensor section styles */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.sensor-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sensor-icon {
+  margin-bottom: 10px;
+}
+
+.sensor-value {
+  font-weight: bold;
+}
+
+/* Fan status styles */
+.fan-indicator {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.fan-indicator.on {
+  background-color: #4CAF50;
+}
+
+.fan-indicator.off {
+  background-color: #F44336;
+}
+
+/* Image section styles */
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Copyright section styles */
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.copyright p {
+  margin: 0;
+}
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .left-column, .right-column {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}
