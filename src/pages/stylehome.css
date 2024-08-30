@@ -139,3 +139,10 @@ body {
     margin-right: 0;
   }
 }
+
+
+/* dropdown */
+.App {
+  width: 500px;  /* Sesuaikan lebar aplikasi jika diperlukan */
+  margin: 0 auto;
+}

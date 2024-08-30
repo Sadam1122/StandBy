@@ -71,3 +71,84 @@
     left: 0;
   }
 }
+
+
+.textarea {
+  width: 100%;
+  resize: vertical;
+  border: none;
+  outline: none;
+}
+
+.checkbox-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+.table-container {
+  page-break-before: always; /* Memastikan setiap tabel dimulai di halaman baru */
+}
+
+.additional-table-container {
+  page-break-before: always; /* Memastikan setiap tabel dimulai di halaman baru */
+}
+
+
+
+/* header */
+/* @media print {
+  @page {
+    margin: 20mm;
+  }
+
+  .page-break {
+    page-break-before: always;
+    position: relative;
+    padding-top: 50px; 
+  }
+
+  .page-break::before {
+    content: url('ATUR.png'); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; 
+    height: auto;
+  }
+
+  .page-break::after {
+    content: url('ATUR.png'); 
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+} */
+
+
+@media print {
+  .logo {
+    display: block;
+    width: 100px; /* Sesuaikan ukuran logo */
+    height: auto;
+  }
+
+  .filename {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+@media screen {
+  .logo {
+    display: none;
+  }
+
+  .filename {
+    display: none;
+  }
+}

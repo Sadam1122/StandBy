@@ -11,7 +11,7 @@ const FormAddProduct = () => {
   const saveProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://standby.web.id/products", {
+      await axios.post("http://localhost:5000/products", {
         name: name,
         price: price,
       });

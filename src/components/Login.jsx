@@ -40,7 +40,7 @@ const Login = () => {
       >
         <div style={{ textAlign: 'center' }}>   
           <img src={require('./ATUR (2) 1.png')} alt="ATUR Logo" style={{ maxWidth: '50vw', maxHeight: '40vh' }} />
-          <h1 style={{ fontSize: '5vh', fontWeight: 'bold' }}>SELAMAT DATANG DI ATUR</h1>
+          <h1 style={{ fontSize: '5vh', fontWeight: 'bold', color: 'white' }}>Selamat Datang Di StandBy</h1>
           <p style={{ fontSize: '4vh' }}>Artificial Intelligence Task Automation and Regulation</p>
           <p style={{ fontSize: '3vh' }}>Mendata hasil inkubator serta uji kelayakan sesuai standarisasi</p>
           <img src={require('./koran.png')} alt="koran" style={{ maxWidth: '50vw', maxHeight: '50vh' }} />

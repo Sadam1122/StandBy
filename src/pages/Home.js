@@ -5,12 +5,52 @@ import Dropdown from './Dropdown';
 import { db } from '../features/firebase'; // Periksa jalur ini
 import { ref, onValue } from 'firebase/database';
 import { Link } from 'react-router-dom'; // Import Link from React Router
-import logo from './logo.png'; // Periksa jalur ini
+import logo from './ATUR.png'; 
 import './Risk.css';
 
+
+// function IncubatorStandardization() {
+//   const [sensorData, setSensorData] = useState({
+//     DS18B20: { temperature: 'Data tidak tersedia' }, 
+//     DHT22: { temperature: 'Data tidak tersedia', 
+//     humidity: 'Data tidak tersedia' }, 
+//     fan_status: 'Off' 
+//   });
+//   const [fanStatus, setFanStatus] = useState('On'); // Status kipas default
+
+//   useEffect(() => {
+//     const dbRef = ref(db, 'sensor_data/');
+//     const handleData = (snapshot) => {
+//       const data = snapshot.val();
+//       if (data) {
+//         setSensorData(data);
+//         setFanStatus(data.fan_status || 'Off'); // Status kipas default jika tidak ada data
+//       } else {
+//         // Data default tetap ditampilkan jika data tidak terbaca
+//         setSensorData({
+//           DS18B20: { temperature: '5°C' }, // Data default
+//           DHT22: { temperature: '5°C', humidity: 'Data tidak tersedia' }, // Data default
+//           fan_status: 'Off' // Status kipas default
+//         });
+//         setFanStatus('Off'); // Status kipas default
+//       }
+//     };
+
+//     const unsubscribe = onValue(dbRef, handleData, {
+//       onlyOnce: false, // Untuk mendapatkan data secara real-time
+//     });
+
+//     return () => {
+//       unsubscribe(); // Cleanup listener on unmount
+//     };
+//   }, []);
+
 function IncubatorStandardization() {
-  const [sensorData, setSensorData] = useState(null);
-  const [fanStatus, setFanStatus] = useState('Data tidak tersedia');
+  const [sensorData, setSensorData] = useState({
+    DS18B20: { temperature: 'Data tidak tersedia' },
+    DHT22: { temperature: 'Data  tidak tersedia', humidity: 'Data tidak tersedia' } // Set default temperature 5°C
+  });
+  const [fanStatus, setFanStatus] = useState('Off');
  
 
 
@@ -41,7 +81,6 @@ function IncubatorStandardization() {
       // Menambahkan pembersihan jika perlu
     };
   }, []);
-
   return (
     <div className="container">
       <div className="top-bar">
@@ -67,7 +106,7 @@ function IncubatorStandardization() {
                 <>
                   <div className="sensor-item" key="DS18B20">
                     <div className="sensor-icon">DS18B20</div>
-                    <div className="sensor-value">{sensorData.DS18B20.temperature}</div>
+                    <div className="sensor-value">{sensorData.DS18B20.temperature}°C</div>
                   </div>
                   <div className="sensor-item" key="DHT22-temp">
                     <div className="sensor-icon">DHT22 Temperature</div>
@@ -129,7 +168,7 @@ const IncubatorStandardizations = () => {
 
   return (
     <div>
-      <button onClick={handlePrint}>Cetak Halaman</button>
+      
       <div className="print-section">
       <RiskManagementTable />
       <AdditionalTable />
@@ -143,6 +182,10 @@ const IncubatorStandardizations = () => {
       <KetahananTable/>
       <BerlebihanTable/>
       <BelitanTable/>
+      <button onClick={handlePrint}>Cetak Halaman</button>
+      <div className="copyright">
+        <p>&copy; 2024 ATUR Baby Incubator. All rights reserved. Created By: YBBA</p>
+      </div>
       </div>
       
     </div>
@@ -201,6 +244,8 @@ const RiskManagementTable = () => {
   return (
    <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>1. Tabel : Hasil manajemen risiko : Persyaratan umum manajemen risiko</h4>
       <table>
         <thead>
@@ -232,14 +277,15 @@ const RiskManagementTable = () => {
               </td>
               
 
-              <td>
+              
+              <td className="checkbox-cell">
                 <input
                   type="checkbox"
                   checked={formData[index].ada}
                   onChange={() => handleCheckboxChange(index, 'ada')}
                 />
               </td>
-              <td>
+              <td className="checkbox-cell">
                 <input
                   type="checkbox"
                   checked={formData[index].tidakAda}
@@ -252,7 +298,7 @@ const RiskManagementTable = () => {
                       onChange={(e) => handleInputChange(index, 'decision', e.target.value)}
                       // placeholder="Masukkan Keputusan"
                       rows="1" // Sesuaikan jumlah baris awal
-                      style={{ width: '100%', resize: 'vertical', border: 'none', outline: 'none' }} />
+                      style={{ width: '100%', resize: 'vertical', border: 'none', outline: 'none'}} />
               </td>
             </tr>
           ))}
@@ -289,6 +335,8 @@ const AdditionalTable = () => {
   return (
     <div className="right-column">
     <div className="additional-table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>2. Tabel : Kinerja Penting</h4>
       <table>
         <thead>
@@ -362,6 +410,8 @@ const KondisiTable = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>3.1. Tabel : Input daya</h4>
       <table>
         <thead>
@@ -455,13 +505,7 @@ const KondisiTablee = () => {
     })
   );
 
-// const Kondisitable = () =>{
-//   const [formData, setFormData] = userState(
-//     Array(1).fill({
-//       catatan: '',
-//     })
-//   )
-// }
+
 
 const handleInputChange = (index, field, value) => {
   const newData = [...formData];
@@ -473,6 +517,8 @@ const handleInputChange = (index, field, value) => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>3.2. Tabel : Input daya</h4>
       <table>
         <thead>
@@ -499,14 +545,7 @@ const handleInputChange = (index, field, value) => {
                     />
                 </td>
                 )}
-              {/* <td>
-                <input
-                  type="text"
-                  value={row.daya}
-                  onChange={(e) => handleInputChange(index, 'daya', e.target.value)}
-                  placeholder="Masukkan Daya"
-                />
-              </td> */}
+         
               <td>
                 <textarea
                       value={row.daya}
@@ -585,6 +624,8 @@ const KondisiTableee = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>3.3. Tabel : Input daya</h4>
       <table>
         <thead>
@@ -700,6 +741,8 @@ const LaranganTable = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>4. Tabel : Larangan</h4>
       <table>
         
@@ -862,6 +905,8 @@ const BocorTable = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>5. Tabel : Arus Bocor</h4>
       <table>
         <thead>
@@ -934,6 +979,8 @@ const BocorsTable = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>6. Tabel : Arus Bocor</h4>
       <table>
         <thead>
@@ -1016,6 +1063,8 @@ const UjiTable = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>7. Tabel : Uji kekuatan dielektrik</h4>
       <table>
         <thead>
@@ -1075,7 +1124,7 @@ const UjiTable = () => {
                       rows="1"
                       style={{ width: '100%', resize: 'vertical', border: 'none', outline: 'none' }} />
               </td>
-              <td>
+              <td className="checkbox-cell">
                 <input
                   type="checkbox"
                   checked={row.ada}
@@ -1083,7 +1132,7 @@ const UjiTable = () => {
                   style={{ width: '100%', resize: 'vertical', border: 'none', outline: 'none' }}
                 />
               </td>
-              <td>
+              <td className="checkbox-cell">
                 <input
                   type="checkbox"
                   checked={row.tidakAda}
@@ -1125,6 +1174,8 @@ const KetahananTable = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>8. Tabel : Ketahanan terhadap avatar</h4>
       <table>
         <thead>
@@ -1196,6 +1247,8 @@ const BerlebihanTable = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>9. Tabel : Suhu berlebih</h4>
       <table>
         <thead>
@@ -1289,6 +1342,8 @@ const BelitanTable = () => {
   return (
     <div className="right-column">
     <div className="table-container">
+    <img src={logo} alt="ATUR Logo" className="logo" />
+      <span className="filename"></span>
       <h4>10. Tabel : Suhu Belitan</h4>
       <table>
         <thead>
@@ -1370,10 +1425,7 @@ const BelitanTable = () => {
       </div>
     </div>
 
-    {/* Footer */}
-    <div className="copyright">
-        <p>&copy; 2024 ATUR Baby Incubator. All rights reserved. Created By: YBBA</p>
-      </div>
+
     </div>
    
   );
