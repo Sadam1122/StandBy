@@ -47,8 +47,8 @@ import './Risk.css';
 
 function IncubatorStandardization() {
   const [sensorData, setSensorData] = useState({
-    DS18B20: { temperature: 'Data tidak tersedia' },
-    DHT22: { temperature: 'Data  tidak tersedia', humidity: 'Data tidak tersedia' } // Set default temperature 5°C
+    DS18B20: { temperature: '5' },
+    DHT22: { temperature: '5', humidity: '5' } // Set default temperature 5°C
   });
   const [fanStatus, setFanStatus] = useState('Off');
  
