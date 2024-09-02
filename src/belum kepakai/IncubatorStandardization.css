@@ -1,0 +1,149 @@
+/* Reset CSS */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Warna latar belakang */
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #007bff; /* Warna teks */
+    margin-bottom: 30px;
+  }
+  
+  /* Input Section */
+  .input-section {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .input-label {
+    font-size: 1.1rem;
+    color: #495057; /* Warna teks */
+    margin-bottom: 10px;
+  }
+  
+  /* Sensor Section */
+  .sensor-section {
+    margin-bottom: 30px;
+  }
+  
+  .sensor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  
+  .sensor-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff; /* Warna latar belakang */
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Bayangan */
+  }
+  
+  .sensor-item input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ced4da; /* Warna border */
+    border-radius: 5px;
+  }
+  
+  .sensor-unit {
+    margin-left: 5px;
+  }
+  
+  /* Input Gambar Section */
+  .image-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .drag-drop-container {
+    position: relative;
+  }
+  
+  .drag-drop-box {
+    border: 2px dashed #007bff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .upload-icon {
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .drop-area {
+    font-size: 1.1rem;
+    color: #6c757d; /* Warna teks */
+  }
+  
+  .uploaded-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .process-button,
+  .reset-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s; /* Animasi perubahan warna */
+  }
+  
+  .process-button:hover,
+  .reset-button:hover {
+    background-color: #0056b3; /* Warna latar belakang saat hover */
+  }
+  
+  /* Question Section */
+  .question-section,
+  .component-section,
+  .description-section {
+    margin-bottom: 30px;
+  }
+  
+  .question-section h2,
+  .component-section h2,
+  .description-section h2 {
+    font-size: 1.5rem;
+    color: #007bff; /* Warna teks */
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sensor-grid {
+      grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+    }
+  
+    .drag-drop-box {
+      padding: 50px; /* Padding lebih besar pada layar kecil */
+    }
+  
+    .upload-icon {
+      font-size: 40px; /* Ukuran ikon lebih kecil pada layar kecil */
+    }
+  }

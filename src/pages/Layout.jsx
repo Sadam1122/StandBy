@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"; 
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
@@ -16,6 +17,11 @@ const Layout = ({ children }) => {
       </div>
     </React.Fragment>
   );
+};
+
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired, 
 };
 
 export default Layout;

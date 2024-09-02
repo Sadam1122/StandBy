@@ -1,0 +1,449 @@
+.table-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h4 {
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    
+  }
+  
+  td {
+    background-color: #fff;
+  }
+  
+  input[type="text"] {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  input[type="checkbox"] {
+    margin: 0 auto;
+  display: block;
+  }
+  
+  .info {
+    font-size: 14px;
+    color: #333;
+  }
+  
+
+
+/* Kawasan icikbos untuk ngeprint yang bagian dimau */
+
+
+@media print {
+  /* Sembunyikan semua elemen */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Tampilkan hanya elemen dengan class print-section */
+  .print-section, .print-section * {
+    visibility: visible;
+  }
+
+  /* Pastikan elemen yang akan dicetak tetap berada di posisi yang benar */
+  .print-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+.textarea {
+  width: 100%;
+  resize: vertical;
+  border: none;
+  outline: none;
+}
+
+.checkbox-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+.table-container {
+  page-break-before: always; /* Memastikan setiap tabel dimulai di halaman baru */
+}
+
+.additional-table-container {
+  page-break-before: always; /* Memastikan setiap tabel dimulai di halaman baru */
+}
+
+
+
+/* header */
+/* @media print {
+  @page {
+    margin: 20mm;
+  }
+
+  .page-break {
+    page-break-before: always;
+    position: relative;
+    padding-top: 50px; 
+  }
+
+  .page-break::before {
+    content: url('ATUR.png'); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; 
+    height: auto;
+  }
+
+  .page-break::after {
+    content: url('ATUR.png'); 
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+} */
+
+
+@media print {
+  .logo {
+    display: block;
+    width: 100px; /* Sesuaikan ukuran logo */
+    height: auto;
+  }
+
+  .filename {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+@media screen {
+  .logo {
+    display: none;
+  }
+
+  .filename {
+    display: none;
+  }
+}
+
+
+
+
+/* login */
+
+/* Section Styles */
+.section-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left Div Styles */
+.left-div {
+  background-color: darkred;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.left-div-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.left-div img {
+  max-width: 50vw;
+  max-height: 40vh;
+}
+
+.left-div h1 {
+  font-size: 3vw;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.left-div p {
+  font-size: 1.5vw;
+  margin-bottom: 1rem;
+}
+
+.left-div img:last-of-type {
+  max-width: 40%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+/* Right Div Styles */
+.right-div {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Form Styles */
+.hero-body .container {
+  max-width: 400px;
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.form-heading {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mb-3 label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.input-group-text {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.form-control {
+  font-size: 1.5rem;
+  flex: 1;
+  padding: 0.5rem 1rem;
+}
+
+button.submit-button {
+  font-size: 1.5rem;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+
+/* Mobile devices (320px — 480px) */
+@media (max-width: 480px) {
+  .section-container {
+    flex-direction: column;
+  }
+
+  .left-div {
+    padding: 1rem;
+  }
+
+  .left-div img {
+    max-width: 70%;
+  }
+
+  .left-div h1 {
+    font-size: 5vw;
+  }
+
+  .left-div p {
+    font-size: 4vw;
+  }
+
+  .left-div img:last-of-type {
+    max-width: 80%;
+  }
+
+  .form-heading {
+    font-size: 3.5rem;
+  }
+
+  .input-group-text {
+    font-size: 2rem;
+  }
+
+  .form-control {
+    font-size: 1.75rem;
+  }
+
+  button.submit-button {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+}
+
+/* Tablets (481px — 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .left-div img {
+    max-width: 60%;
+  }
+
+  .left-div h1 {
+    font-size: 4vw;
+  }
+
+  .left-div p {
+    font-size: 3vw;
+  }
+
+  .left-div img:last-of-type {
+    max-width: 70%;
+  }
+
+  .form-heading {
+    font-size: 3rem;
+  }
+
+  .input-group-text {
+    font-size: 1.75rem;
+  }
+
+  .form-control {
+    font-size: 1.5rem;
+  }
+
+  button.submit-button {
+    font-size: 1.75rem;
+    padding: 1rem;
+  }
+}
+
+/* Small screens, laptops (769px — 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .left-div img {
+    max-width: 50%;
+  }
+
+  .left-div h1 {
+    font-size: 3vw;
+  }
+
+  .left-div p {
+    font-size: 2.5vw;
+  }
+
+  .left-div img:last-of-type {
+    max-width: 60%;
+  }
+
+  .form-heading {
+    font-size: 2.5rem;
+  }
+
+  .input-group-text {
+    font-size: 1.5rem;
+  }
+
+  .form-control {
+    font-size: 1.25rem;
+  }
+
+  button.submit-button {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Desktops, large screens (1025px — 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .left-div img {
+    max-width: 40%;
+  }
+
+  .left-div h1 {
+    font-size: 2.5vw;
+  }
+
+  .left-div p {
+    font-size: 2vw;
+  }
+
+  .left-div img:last-of-type {
+    max-width: 50%;
+  }
+
+  .form-heading {
+    font-size: 2rem;
+  }
+
+  .input-group-text {
+    font-size: 1.25rem;
+  }
+
+  .form-control {
+    font-size: 1.25rem;
+  }
+
+  button.submit-button {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Extra large screens, TV (1201px and more) */
+@media (min-width: 1201px) {
+  .left-div img {
+    max-width: 30%;
+  }
+
+  .left-div h1 {
+    font-size: 2vw;
+  }
+
+  .left-div p {
+    font-size: 1.5vw;
+  }
+
+  .left-div img:last-of-type {
+    max-width: 40%;
+  }
+
+  .form-heading {
+    font-size: 1.5rem;
+  }
+
+  .input-group-text {
+    font-size: 1.25rem;
+  }
+
+  .form-control {
+    font-size: 1.25rem;
+  }
+
+  button.submit-button {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+  }
+}
